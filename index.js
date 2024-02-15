@@ -40,6 +40,10 @@ const convertFile = async (sourcePath, destinationPath, decode, encode) => {
   const filePath = "";
   const destinationPath = "";
 
+  if (!filePath && !destinationPath) {
+    return console.log("Not found source and destination path!");
+  }
+
   await convertFile(filePath, destinationPath, "TIS-620", "UTF-8");
 
   const readStream = fs.createReadStream(filePath);
